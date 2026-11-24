@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TÜBİTAK Bilgisayar Olimpiyatı — Etkileşimli C Dersleri</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <button id="menuToggle" class="icon-btn" aria-label="Menüyü Aç/Kapat">☰</button>
+      <div class="brand">
+        <span class="brand-badge">C</span>
+        <div>
+          <h1>TÜBİTAK Bilgisayar Olimpiyatı</h1>
+          <small>1. Aşama Etkileşimli C Ders Notları</small>
+        </div>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <button id="playgroundBtn" class="btn-outline">▶ C Editörü</button>
+      <button id="themeToggle" class="icon-btn" title="Tema Değiştir">🌙</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-search">
+        <input type="text" id="searchInput" placeholder="Konu veya anahtar kelime ara..." />
+      </div>
+      <nav id="navList" class="nav-list"></nav>
+    </aside>
+
+    <main id="mainContent" class="main-content">
+      <div id="contentArea" class="content-area"></div>
+      <div class="page-nav">
+        <button id="prevBtn" class="btn-outline">← Önceki</button>
+        <button id="nextBtn" class="btn-outline">Sonraki →</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Etkileşimli C Kod Çalıştırıcı Modal -->
+  <div id="runnerModal" class="modal hidden">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>⚡ Etkileşimli C Kod Çalıştırıcı (GCC)</h3>
+        <button id="closeRunnerBtn" class="icon-btn">✕</button>
+      </div>
+      <div class="modal-body">
+        <textarea id="runnerCode" spellcheck="false"></textarea>
+        <div class="runner-actions">
+          <button id="runCodeBtn" class="btn-primary">▶ Derle ve Çalıştır</button>
+          <button id="copyRunnerBtn" class="btn-outline">📋 Kopyala</button>
+          <button id="pythonTutorBtn" class="btn-outline">🔍 Adım Adım Görselleştir ↗</button>
+          <a id="onlineGdbLink" href="https://www.onlinegdb.com/online_c_compiler" target="_blank" rel="noopener" class="btn-outline">OnlineGDB'de Aç ↗</a>
+          <span id="runnerStatus" class="runner-status"></span>
+        </div>
+        <div class="output-panel">
+          <div class="output-label">Ekran Çıktısı (stdout / derleyici)</div>
+          <pre id="runnerOutput">Çalıştırmak için "Derle ve Çalıştır" butonuna basın...</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="data/part1_chapters.js"></script>
+  <script src="data/part2_chapters.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
